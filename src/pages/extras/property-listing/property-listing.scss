@@ -1,0 +1,76 @@
+page-property-listing {
+
+    .toolbar-background {
+        border-color: transparent;
+        background: rgba(color($colors, dark), .3);
+    }
+
+    .bar-button,
+    .toolbar-title {
+        color: rgba(255,255,255, .95);
+    }
+
+    .housing-image{
+        background-size: cover;
+        height: 50vh;
+        position: relative;
+    }
+
+    .housing-banner {
+        color: rgba(255,255,255, .95);
+        background: rgba(color($colors, dark), .65);
+        height: 10vh;
+        width: 100vw;
+        position: absolute;
+        bottom: -1px;
+
+        .housing-title {
+            display: block;
+            font-size: 1.2rem;
+        }
+
+        .price {
+            font-size: 3rem;
+        }
+    }
+
+    .content {
+        // background: color($colors, light);
+    }
+
+    .scroll-content {
+        padding-top: 0 !important;
+    }
+
+    .main-content {
+        color: $text-color;
+
+    }
+
+    .listing-details ion-col {
+        padding: 1rem;
+        margin: 0.45rem;
+        ion-icon {
+            margin-right: .5rem;
+        }
+    }
+
+    .main-features {
+        color: color($colors, dark);
+
+        ion-icon {
+        	color: color($colors, primary);
+            font-size: 3.5rem !important;
+            margin-bottom: 8px;
+        }
+        ion-col {
+        	background-color: color($colors, light);
+        }
+    }
+
+    .item-block {
+        text-align: center;
+        display: block;
+        min-height: 1rem;
+    }
+}
