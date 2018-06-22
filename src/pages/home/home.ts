@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, MenuController,ModalController, PopoverController } from 'ionic-angular';
+import { IonicPage, NavController, MenuController, PopoverController } from 'ionic-angular';
 
 import { PropertyService } from '../../providers/property-service-mock';
 
@@ -17,8 +17,7 @@ import { PropertyService } from '../../providers/property-service-mock';
 export class HomePage {
 
   properties: Array<any>;
-	searchKey: string = "";
-	
+  searchKey: string = "";
 
 	constructor(public navCtrl: NavController, public menuCtrl: MenuController, public popoverCtrl: PopoverController, public service: PropertyService) {
 		this.menuCtrl.swipeEnable(true, 'authenticated');
@@ -67,8 +66,6 @@ export class HomePage {
     });
   }
 
-	
-	
   ionViewWillEnter() {
       // this.navCtrl.canSwipeBack();
   }

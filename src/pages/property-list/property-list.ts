@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, Config, NavController, NavParams, ToastController, ModalController} from 'ionic-angular';
-import { CalendarModal, CalendarModalOptions, CalendarResult } from "ion2-calendar";
+
 import {PropertyService} from '../../providers/property-service-mock';
 import leaflet from 'leaflet';
 
@@ -22,16 +22,7 @@ export class PropertyListPage {
     from: string;
     map;
     markersGroup;
-    // search conditions
-    public checkin = {
-        name: "Move-in",
-        date: new Date().toLocaleString().split(',')[0]
-    }
 
-    public checkout = {
-        name: "Move-out",
-        date: new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleString().split(',')[0]
-    }
     constructor(public navCtrl: NavController, public navParams: NavParams, public service: PropertyService, public toastCtrl: ToastController, public modalCtrl: ModalController, public config: Config) {
 			this.findAll();
 			this.proptype = this.navParams.get('proptype') || "";
@@ -39,26 +30,6 @@ export class PropertyListPage {
 		// console.log(this.proptype);
 		// console.log(this.from);
     }
-
-    openCalendar() {
-        const options: CalendarModalOptions = {
-          pickMode: 'range',
-          title: 'Range Date'
-        };
-    
-        let myCalendar = this.modalCtrl.create(CalendarModal, {
-          options: options
-        });
-    
-        myCalendar.present();
-    
-        myCalendar.onDidDismiss((date: { from: CalendarResult; to: CalendarResult }, type: string) => {
-          if (date !== null) {
-            this.checkin.date = new Date(new Date(date.from.time)).toLocaleString().split(',')[0]
-            this.checkout.date = new Date(new Date(date.to.time)).toLocaleString().split(',')[0]
-          }
-        });
-        }
 
     openFilterModal() {
 		let modal = this.modalCtrl.create('page-property-filter');
